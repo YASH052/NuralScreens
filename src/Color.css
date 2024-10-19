@@ -1,0 +1,21 @@
+.orangecolor {
+    background-color:  #ED713E;
+}
+.fontcolorwhite {
+    color: white;
+}
+.fontcolorblackbold {
+    font-weight: 600;
+}
+.iconcolororange {
+    color: #ED713E;;
+}
+.backgroundcolor{
+    background-color: #ED713E;
+}
+.backgroundcolorsecondary {
+    background-color:  #5B5B5B;
+}
+.bordercolororange {
+    border: 0.7px solid #ED713E;
+}

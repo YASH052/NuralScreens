@@ -1,0 +1,14 @@
+.app-country-box{
+  border: 2px solid rgb(231, 224, 224);
+  border-radius: 4px;
+}
+.app-country-boder-bottom{
+border-bottom: 2px solid rgb(148, 143, 143);
+}
+.app-placeholder{
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  width: 100%;
+}

@@ -1,0 +1,24 @@
+.mediumfont {
+    font-size: 12px;
+}
+.mediumfontbold{
+    font-size: 14px;
+    font-weight: 600;
+}
+.mediumfont{
+    font-size: 14px;
+}
+.smallfont {
+    font-size: 12px;
+}
+.largefont{
+    font-size: 18px;
+}
+.largefontbold{
+    font-size: 18px;
+    font-weight: 600;
+}
+.largefontsemibold{
+      font-size: 18px;
+    font-weight: 550;
+}
