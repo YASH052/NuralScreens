@@ -20,11 +20,10 @@ const SideMenu = () => {
   const [bulletinOpen, setBulletinOpen] = useState(false);
   return (
     <>
-      <Col className="app-sidemenu-col">
+      <Col className="app-sidemenu-col sidemenubg">
         <Col className="backgroundcolor align-items-center d-flex mediumfontbold fontcolorwhite app-sidemenu-mainmenu">
           <Col className="ms-2"> Main Menu</Col>
         </Col>
-
         <Col className="mt-3 mediumfont ms-2">
           <img
             src="./Dashboard.png"
@@ -46,7 +45,7 @@ const SideMenu = () => {
           />{" "}
           Transaction
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={transactionOpen ? faChevronUp : faChevronDown} // Toggle icon
           />
         </Col>
@@ -73,7 +72,7 @@ const SideMenu = () => {
             src="./Target.png"
             alt=""
             style={{ width: "20px", height: "20px" }}
-          />{" "}
+          />
           Target
         </Col>
         <Col
@@ -88,7 +87,7 @@ const SideMenu = () => {
           />{" "}
           Transaction return
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={transactionReturnOpen ? faChevronUp : faChevronDown} // Toggle icon
           />
         </Col>
@@ -122,7 +121,7 @@ const SideMenu = () => {
           />{" "}
           Merchandizing
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={merchandizingOpen ? faChevronUp : faChevronDown} // Toggle icon
           />
         </Col>
@@ -151,7 +150,7 @@ const SideMenu = () => {
           />{" "}
           Competetion
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={competitionOpen ? faChevronUp : faChevronDown}
           />
         </Col>
@@ -175,10 +174,10 @@ const SideMenu = () => {
             src="./learning.png"
             alt="Learning & Development"
             style={{ width: "20px", height: "20px" }}
-          />{" "}
-          Learning & Development
+          />
+          {" "}Learning & Development
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={learningOpen ? faChevronUp : faChevronDown}
           />
         </Col>
@@ -219,7 +218,7 @@ const SideMenu = () => {
           />{" "}
           Bulletin
           <FontAwesomeIcon
-            className="position-absolute end-0 me-3"
+            className="position-absolute end-0 me-1"
             icon={bulletinOpen ? faChevronUp : faChevronDown}
           />
         </Col>

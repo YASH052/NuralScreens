@@ -5,10 +5,16 @@ const Footer = () => {
   return (
     <Row className="fixed-bottom footerbg justify-content-center text-center">
       <img
-        className=""
-        src="./footerlogo.jpg"
+        className="img-fluid"
+        src="./footericon1.png"
         alt=""
-        style={{ width: "300px", height: "30px" }}
+        style={{ width: "200px", height: "40px" }}
+      />
+      <img
+        className="img-fluid"
+        src="./footericon2.png"
+        alt=""
+        style={{ width: "200px", height: "40px" }}
       />
     </Row>
   );

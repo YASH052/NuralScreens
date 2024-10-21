@@ -177,7 +177,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleSubCategoryClick}
             >
-              Subcategory / classification
+              Subcategory/ classification
             </Col>
             <Col
               xxl={2}

@@ -11,6 +11,7 @@ import {
 import { useNavigate, useLocation } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
 import SideMenu from "../SideMenu/SideMenu";
+import Footer from "../Footer/Footer";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -103,7 +104,7 @@ const Header = () => {
             className=""
             src="./logo.png"
             alt="LandingPage Right"
-            style={{ width: "100%", height: "100px" }}
+            style={{ width: "100%", height: "120px" }}
           />
         </Col>
       </Row>
@@ -122,6 +123,7 @@ const Header = () => {
           </Col>
         </Row>
       )}
+      <Footer/>
     </Container>
   );
 };
