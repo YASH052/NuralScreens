@@ -19,8 +19,8 @@ import {
 const SKU = () => {
   return (
     <>
-      <Row className="mt-1 ms-2 fontcolorblackbold app-LandingPage-setting">
-        Masters {">"} Locations {">"} SKU
+      <Row className="mt-1 paddingleft-mastersettings fontcolorblackbold borderbottom app-LandingPage-setting">
+        Masters {">"} SKU
       </Row>
       <Row className="ms-4 mt-2">
         <Col
@@ -275,7 +275,7 @@ const SKU = () => {
             Search
           </Col>
 
-          <Row className="orangecolor fontcolorwhite ms-0 mt-4 mb-2">
+          <Row className="backgroundcolor fontcolorwhite ms-0 mt-4 mb-2">
             <Col xxl={2} xl={2} lg={2} md={2}>
               S.No
             </Col>

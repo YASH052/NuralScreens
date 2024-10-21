@@ -1,4 +1,3 @@
-import './LandingPage.css'
 import '../color.css'
 import "../fonts.css";
 import React, { useState } from "react";
@@ -23,7 +22,6 @@ import State from '../Pages/State.jsx';
 import SubCategory from '../Pages/SubCategory.jsx';
 import Category from '../Pages/Category.jsx';
 import SideMenu from '../SideMenu/SideMenu.jsx';
-import Headerr from '../Pages/Headerr.jsx';
 function LandingPage() {
    const [showSetting, setShowSetting] = useState(false); // State to manage visibility
    const handleSetting = () => {
@@ -31,7 +29,7 @@ function LandingPage() {
    };
     return (
       <Container fluid>
-        <Headerr />
+        
         <Row className="">
           <Col xl={2} className="app-sidemenu-col sidemenubg sidemenuborder">
             <SideMenu />
