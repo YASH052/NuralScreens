@@ -51,6 +51,10 @@ border-bottom: 2px solid rgb(148, 143, 143);
     min-height: 100vh; /* Minimum height is the full viewport */
     height: auto;
 }
+.sidemenuwidth { 
+    max-width: 35px;
+}
+
 .sidemenuborder {
     border-right: 2px solid #c9c0c0;
 }
@@ -62,5 +66,42 @@ border-bottom: 2px solid rgb(148, 143, 143);
 }
 .borderbottom {
   border-bottom: 2px solid #9d9797;
-  width:111%;
+  width: 111%;
 }
+/* .borderbottomfull {
+  border-bottom: 2px solid #9d9797;
+  width: 120%!important;
+} */
+
+.app-access-maincontainer{
+    background-color: #faf7ff;
+    /* background-color: #6b3abf; */
+    height: 100vh;
+}
+.app-access-container{
+    /* background-color: #ffffff; */
+    border: none;
+    border-radius: 16px;
+    max-width: 400px;
+}
+  .date-input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 4px;
+  }
+  .app-details-btn{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: none;
+    border: #ED713E;
+  }
+  .app-uploadfile-btn {
+    background-color: rgb(221, 225, 226)!important;
+    color: #333!important;
+    border: 1px solid black!important;
+  }
+  .app-access-continuebtn{
+    border-radius: 22px;
+  }

@@ -10,6 +10,7 @@ import {
 import React, { useState } from "react";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { MenuConstants } from "../Constant/MenuConstants";
 import {
   faLightbulb,
   faPenToSquare,
@@ -20,7 +21,7 @@ const SKU = () => {
   return (
     <>
       <Row className="mt-1 paddingleft-mastersettings fontcolorblackbold borderbottom app-LandingPage-setting">
-        Masters {">"} SKU
+        Masters {">"} {MenuConstants.SKU}
       </Row>
       <Row className="ms-4 mt-2">
         <Col
@@ -30,7 +31,7 @@ const SKU = () => {
           md={2}
           className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
         >
-          Manage SKU
+          Manage {MenuConstants.SKU}
         </Col>
         <Row className="app-country-box ms-0">
           <Col xxl={3} xl={3} lg={3} md={3}>
@@ -149,12 +150,12 @@ const SKU = () => {
           <Row className="ms-2 mb-4">
             <Col xxl={2} xl={2} lg={2} md={2}>
               <Button className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                Create
+                {MenuConstants.create}
               </Button>
             </Col>
             <Col>
               <Button className="bordercolororange cursorpointer mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                Cancel
+                {MenuConstants.cancel}
               </Button>
             </Col>
           </Row>
@@ -168,7 +169,7 @@ const SKU = () => {
           md={2}
           className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
         >
-          List
+          {MenuConstants.list}
         </Col>
         <Row className="app-country-box ms-0 p-0 position-relative">
           <Col xxl={2} xl={2} lg={2} md={2}>
@@ -289,7 +290,7 @@ const SKU = () => {
               Model
             </Col>
             <Col xxl={2} xl={2} lg={2} md={2}>
-              SKU
+              {MenuConstants.SKU}
             </Col>
             <Col>Action</Col>
           </Row>
@@ -354,7 +355,7 @@ const SKU = () => {
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center text-center mb-3">
             <Col xs="auto">
-              First Page
+              First {MenuConstants.page}
               <span
                 style={{
                   border: "1px solid black",
@@ -365,7 +366,7 @@ const SKU = () => {
               >
                 <FontAwesomeIcon icon={faArrowLeft} />
               </span>
-              Page
+              {MenuConstants.page}
               <span
                 style={{
                   border: "1px solid black",
@@ -385,7 +386,7 @@ const SKU = () => {
               >
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>{" "}
-              Last Page
+              Last {MenuConstants.page}
             </Col>
           </Row>
         </Row>

@@ -22,10 +22,12 @@ const Header = () => {
     navigate("/setting"); // Navigate to the settings route
   };
    const [showSideMenu, setShowSideMenu] = useState(true);
+   
    const handleSideMenu = () => {
      setShowSideMenu(!showSideMenu);
    };
-  const shouldShowSideMenu = location.pathname === "/";
+  const shouldShowSideMenu = location.pathname === "/header";
+  
 
   return (
     <Container fluid>
@@ -34,8 +36,9 @@ const Header = () => {
           xxl={2}
           xl={2}
           lg={2}
-          md={2}
-          sm={2}
+          md={3}
+          sm={3}
+          xs={3}
           className="app-LandingPage-client-logo align-items-center d-flex"
         >
           Client Logo
@@ -45,7 +48,8 @@ const Header = () => {
           xl={8}
           lg={6}
           md={6}
-          sm={7}
+          sm={6}
+          xs={6}
           className="app-LandingPage-middlepart justify-content-center d-flex flex-column position-relative"
         >
           <Row
@@ -96,8 +100,9 @@ const Header = () => {
           xxl={2}
           xl={2}
           lg={2}
-          md={2}
-          sm={2}
+          md={3}
+          sm={3}
+          xs={3}
           className="align-items-center app-LandingPage-rightpart"
         >
           <img
@@ -112,18 +117,10 @@ const Header = () => {
       {/* Render the SideMenu only when on the /setting route */}
       {shouldShowSideMenu && showSideMenu && (
         <Row>
-          <Col
-            xxl={2}
-            xl={2}
-            lg={2}
-            md={2}
-            className="sidemenubg sidemenuborder p-0 "
-          >
-            <SideMenu />
-          </Col>
+          <SideMenu />
         </Row>
       )}
-      <Footer/>
+      <Footer />
     </Container>
   );
 };

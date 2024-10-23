@@ -4,6 +4,8 @@ import Header from "./Header";
 import SideMenu from "../SideMenu/SideMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { MenuConstants } from "../Constant/MenuConstants";
+
 import {
   faLightbulb,
   faPenToSquare,
@@ -14,29 +16,28 @@ import {
 
 import Footer from "../Footer/Footer";
 const Mastersetting = () => {
-   const [showSideMenu, setShowSideMenu] = useState(false);
+  const [showSideMenu, setShowSideMenu] = useState(false);
 
-   // Step 2: handleSideMenu function to toggle the side menu
-   const handleSideMenu = () => {
-     setShowSideMenu(!showSideMenu);
-   };
   const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleCountryClick = () => {
     navigate("/country"); // Redirect to the /country route on click
   };
+  const handlePrice = () => {
+    navigate("/uploadprice"); // Redirect to the /country route on click
+  };
   const handleStateClick = () => {
     navigate("/state"); // Redirect to the /country route on click
   };
-  const handleRegionClick =() =>{
-    navigate("/region")
-  }
-    const handleCityClick = () => {
-      navigate("/city"); // Redirect to the /country route on click
-    };
-    const handleAreaClick = () => {
-      navigate("/area");
-    };
+  const handleRegionClick = () => {
+    navigate("/region");
+  };
+  const handleCityClick = () => {
+    navigate("/city"); // Redirect to the /country route on click
+  };
+  const handleAreaClick = () => {
+    navigate("/area");
+  };
   const handleBrandClick = () => {
     navigate("/brand");
   };
@@ -55,21 +56,16 @@ const Mastersetting = () => {
         <Header />
       </Row>
       <Row className="">
-        <Col
-          xl={2}
-          lg={2}
-          md={4}
-          className="app-sidemenu-col d-md-block d-none sidemenubg sidemenuborder"
-        >
-          <SideMenu />
-        </Col>
-        <Col xxl={9} xl={9} lg={9} md={8} className="p-0">
-          <Col className="mt-1 paddingleft-mastersettings borderbottom fontcolorblackbold app-LandingPage-setting">
+
+        <SideMenu />
+        <Col lg={9} md={9} sm={9} xl={9} xs={7} className="p-0">
+          <Col className="mt-1 paddingleft-mastersettings fontcolorblackbold app-LandingPage-setting borderbottom">
             {/* Show icon only on screens smaller than 992px */}
-            <span className="d-md-none cursorpointer ">
+            {/* <span className="d-sm-none cursorpointer ">
               <FontAwesomeIcon icon={faBars} onClick={handleSideMenu} />
-            </span>{" "}
-            Setting / Master
+            </span>{" "} */}
+            {MenuConstants.masterSetting}
+            
             {showSideMenu && (
               <Col
                 xl={2}
@@ -77,13 +73,15 @@ const Mastersetting = () => {
                 md={4}
                 sm={4}
                 xs={5}
-                className="app-sidemenu-col ms-2 sidemenubg d-block d-md-none sidemenuborder"
+                className="app-sidemenu-col ms-2 sidemenubg sidemenuborder"
               >
                 <SideMenu />
               </Col>
             )}
           </Col>
-          <Row className="ms-4 mt-2 fontcolorblackbold">Location</Row>
+          <Row className="ms-4 mt-2 fontcolorblackbold">
+            {MenuConstants.location}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -93,7 +91,7 @@ const Mastersetting = () => {
               className="cursorpointer mt-2 p-4  backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleCountryClick}
             >
-              Country
+              {MenuConstants.country}
             </Col>
             <Col
               xxl={2}
@@ -103,7 +101,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleRegionClick}
             >
-              Region
+              {MenuConstants.region}
             </Col>
             <Col
               xxl={2}
@@ -113,7 +111,7 @@ const Mastersetting = () => {
               className="cursorpointer mt-2 p-4  backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleStateClick}
             >
-              State
+              {MenuConstants.state}
             </Col>
             <Col
               xxl={2}
@@ -123,7 +121,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleCityClick}
             >
-              City
+              {MenuConstants.city}
             </Col>
             <Col
               xxl={2}
@@ -133,7 +131,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  app-LandingPage-locations"
               onClick={handleAreaClick}
             >
-              Area
+              {MenuConstants.area}
             </Col>
           </Row>
           <Row className="mt-2 ms-4">
@@ -144,10 +142,12 @@ const Mastersetting = () => {
               md={2}
               className=" cursorpointer backgroundcolor p-4 fontcolorwhite  app-LandingPage-locations"
             >
-              Bulk Upload
+              {MenuConstants.bulkUpload}
             </Col>
           </Row>
-          <Row className="ms-4 mt-4 fontcolorblackbold">Product</Row>
+          <Row className="ms-4 mt-4 fontcolorblackbold">
+            {MenuConstants.product}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -157,7 +157,7 @@ const Mastersetting = () => {
               className="cursorpointer mt-2 p-4  backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleBrandClick}
             >
-              Brand
+              {MenuConstants.brand}
             </Col>
             <Col
               xxl={2}
@@ -167,7 +167,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleCategoryClick}
             >
-              Category
+              {MenuConstants.category}
             </Col>
             <Col
               xxl={2}
@@ -177,7 +177,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleSubCategoryClick}
             >
-              Subcategory/ classification
+              {MenuConstants.subCategoryclassification}
             </Col>
             <Col
               xxl={2}
@@ -187,7 +187,7 @@ const Mastersetting = () => {
               className=" cursorpointer mt-2 p-4 backgroundcolor fontcolorwhite cursorpointer  me-4 app-LandingPage-locations"
               onClick={handleModelClick}
             >
-              Model
+              {MenuConstants.model}
             </Col>
             <Col
               xxl={2}
@@ -196,11 +196,13 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor mt-2 p-4 cursorpointer fontcolorwhite  app-LandingPage-locations"
             >
-              Bulk upload
+              {MenuConstants.bulkUpload}
             </Col>
           </Row>
 
-          <Row className="ms-4 mt-4 fontcolorblackbold">Retailer</Row>
+          <Row className="ms-4 mt-4 fontcolorblackbold">
+            {MenuConstants.retailer}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -209,11 +211,13 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer p-4  me-4 app-LandingPage-locations"
             >
-              Manage retailers
+              {MenuConstants.manage} {MenuConstants.retailer}
             </Col>
           </Row>
 
-          <Row className="ms-4 mt-4 fontcolorblackbold">Sales channel</Row>
+          <Row className="ms-4 mt-4 fontcolorblackbold">
+            {MenuConstants.salesChannel}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -222,7 +226,7 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer mt-2 p-4 me-4 app-LandingPage-locations"
             >
-              Manage sales channel
+              {MenuConstants.manageSalesChannel}
             </Col>
             <Col
               xxl={2}
@@ -231,7 +235,7 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor p-4 fontcolorwhite  cursorpointer me-4 mt-2 app-LandingPage-locations"
             >
-              Spare
+              {MenuConstants.spare}
             </Col>
             <Col
               xxl={2}
@@ -240,11 +244,13 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer p-4  me-4 mt-2 app-LandingPage-locations"
             >
-              Warranty void reason
+              {MenuConstants.warrantyVoidReason}
             </Col>
           </Row>
 
-          <Row className="ms-4 fontcolorblackbold mt-4">User Master</Row>
+          <Row className="ms-4 fontcolorblackbold mt-4">
+            {MenuConstants.userMaster}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -253,7 +259,7 @@ const Mastersetting = () => {
               md={2}
               className="backgroundcolor fontcolorwhite cursorpointer me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              User masters
+              {MenuConstants.userMaster}
             </Col>
             <Col
               xxl={2}
@@ -262,11 +268,13 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Bulk upload mapping
+              {MenuConstants.bulkUploadMapping}
             </Col>
           </Row>
 
-          <Row className="ms-4 fontcolorblackbold mt-2">Price</Row>
+          <Row className="ms-4 fontcolorblackbold mt-2">
+            {MenuConstants.price}
+          </Row>
           <Row className="ms-4">
             <Col
               xxl={2}
@@ -274,8 +282,9 @@ const Mastersetting = () => {
               lg={2}
               md={2}
               className="backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
+              onClick={handlePrice}
             >
-              price
+              {MenuConstants.price}
             </Col>
             <Col
               xxl={2}
@@ -284,7 +293,7 @@ const Mastersetting = () => {
               md={2}
               className="backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              price group
+              {MenuConstants.priceGroup}
             </Col>
           </Row>
 
@@ -297,7 +306,7 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Manage leaves types
+              {MenuConstants.manageLeaveTypes}
             </Col>
             <Col
               xxl={2}
@@ -306,10 +315,12 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Leaves allocation
+              {MenuConstants.leaveAllocation}
             </Col>
           </Row>
-          <Row className="ms-4 fontcolorblackbold mt-4">ISP Master</Row>
+          <Row className="ms-4 fontcolorblackbold mt-4">
+            {MenuConstants.ISPmaster}
+          </Row>
           <Row className="ms-4 mb-5">
             <Col
               xxl={2}
@@ -318,7 +329,7 @@ const Mastersetting = () => {
               md={2}
               className="backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Manage ISP
+              {MenuConstants.manageISP}
             </Col>
             <Col
               xxl={2}
@@ -327,7 +338,7 @@ const Mastersetting = () => {
               md={2}
               className="backgroundcolor fontcolorwhite cursorpointer  me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Pre-booking SKU
+              {MenuConstants.preBookingSKU}
             </Col>
             <Col
               xxl={2}
@@ -336,7 +347,7 @@ const Mastersetting = () => {
               md={2}
               className=" backgroundcolor fontcolorwhite cursorpointer cursorpointer me-4 mt-2 p-4 app-LandingPage-locations"
             >
-              Ranking weightage
+              {MenuConstants.rankingWeightage}
             </Col>
           </Row>
         </Col>
@@ -344,6 +355,6 @@ const Mastersetting = () => {
       <Footer />
     </Container>
   );
-}
+};
 
 export default Mastersetting

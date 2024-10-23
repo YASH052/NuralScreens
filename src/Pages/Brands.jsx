@@ -2,6 +2,7 @@ import { Row, Col, Button, Container,InputGroup,Dropdown,FormControl } from "rea
 import React, { useState } from "react";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { MenuConstants } from "../Constant/MenuConstants";
 import {
   faLightbulb,
   faPenToSquare,
@@ -15,9 +16,7 @@ import Footer from "../Footer/Footer";
  import { useNavigate } from "react-router-dom";
 const Brands = () => {
    const [showSideMenu, setShowSideMenu] = useState(false);
-   const handleSideMenu = () => {
-     setShowSideMenu(!showSideMenu);
-   };
+   
   const navigate = useNavigate();
     const handleSetting = () => {
       navigate("/setting"); // Navigate to the settings route
@@ -28,34 +27,17 @@ const Brands = () => {
         <Header />
       </Row>
       <Row className="mb-4">
-        <Col
-          xl={2}
-          xxl={2}
-          lg={2}
-          md={2}
-          sm={2}
-          className="app-sidemenu-col d-none d-md-block sidemenubg sidemenuborder"
-        >
+       
           <SideMenu />
-        </Col>
-        <Col xxl={9} xl={9} lg={9} md={9} className="p-0">
+        
+        <Col xxl={9} xl={9} lg={9} md={9} xs={7} className="p-0">
           <Col className="mt-1 paddingleft-mastersettings fontcolorblackbold borderbottom app-LandingPage-setting">
-            <span onClick={handleSideMenu} className="d-md-none">
-              <FontAwesomeIcon icon={faBars} />
+           
+            <span className="cursorpointer" onClick={handleSetting}>
+              {MenuConstants.master}
             </span>{" "}
-            <span className="cursorpointer" onClick={handleSetting}>Masters</span> {">"} Brands
-            {showSideMenu && (
-              <Col
-                xl={2}
-                lg={2}
-                md={3}
-                sm={4}
-                xs={8}
-                className="app-sidemenu-col ms-3 d-block d-md-none sidemenubg sidemenuborder"
-              >
-                <SideMenu />
-              </Col>
-            )}
+            {">"} {MenuConstants.brand}
+           
           </Col>
           <Row className="ms-4 mt-2">
             <Col
@@ -65,7 +47,7 @@ const Brands = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
             >
-              Manage Brand
+              {MenuConstants.manage} {MenuConstants.brand}
             </Col>
             <Row className="app-country-box ms-0">
               <Row className="ms-4 mt-3">Brand</Row>
@@ -75,7 +57,7 @@ const Brands = () => {
                   className="form-control app-placeholder" // Bootstrap class for styling input
                 />
               </Col>
-              <Row className="ms-4 mt-3">Description</Row>
+              <Row className="ms-4 mt-3">{MenuConstants.description}</Row>
               <Col className="ms-4 mb-3">
                 <input
                   type="text"
@@ -85,12 +67,12 @@ const Brands = () => {
               <Row className="ms-2 mb-4">
                 <Col xxl={2} xl={2} lg={2} md={2}>
                   <Button className="cursorpointer bordercolororange mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Create
+                    {MenuConstants.create}
                   </Button>
                 </Col>
                 <Col>
                   <Button className="bordercolororange backgroundcolorsecondarybuttons cursorpointer mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Cancel
+                    {MenuConstants.cancel}
                   </Button>
                 </Col>
               </Row>
@@ -104,10 +86,10 @@ const Brands = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
             >
-              List
+              {MenuConstants.list}
             </Col>
             <Row className="app-country-box ms-0 p-0 position-relative">
-              <Row className="ms-4 mt-3">Brand</Row>
+              <Row className="ms-4 mt-3">{MenuConstants.brand}</Row>
               <Col xxl={2} xl={2} lg={2} md={2} className="ms-4 mb-3">
                 <InputGroup>
                   <FormControl
@@ -137,7 +119,7 @@ const Brands = () => {
                 xs={2}
                 className="cursorpointer position-absolute end-0 mt-5 me-3 bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite app-LandingPage-locations"
               >
-                Search
+                {MenuConstants.search}
               </Col>
 
               <Row className="backgroundcolor fontcolorwhite ms-0 mt-4 mb-2">
@@ -145,9 +127,9 @@ const Brands = () => {
                   S.No
                 </Col>
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  Brand
+                  {MenuConstants.brand}
                 </Col>
-                <Col>Action</Col>
+                <Col>{MenuConstants.action}</Col>
               </Row>
 
               <Row className="ms-0 app-placeholder">
@@ -196,8 +178,9 @@ const Brands = () => {
               </Row>
               <Row className="mt-5 d-flex align-items-center justify-content-center text-center mb-3">
                 <Col xs="auto">
-                  First Page
-                   <span className="cursorpointer"
+                  First {MenuConstants.page}
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -206,8 +189,8 @@ const Brands = () => {
                   >
                     <FontAwesomeIcon icon={faArrowLeft} />
                   </span>{" "}
-                  Page
-                <span 
+                  {MenuConstants.page}
+                  <span
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -217,7 +200,8 @@ const Brands = () => {
                     1
                   </span>{" "}
                   out of xx
-                <span className="cursorpointer"
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -226,7 +210,7 @@ const Brands = () => {
                   >
                     <FontAwesomeIcon icon={faArrowRight} />
                   </span>{" "}
-                  Last Page
+                  Last {MenuConstants.page}
                 </Col>
               </Row>
             </Row>
