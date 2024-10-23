@@ -8,6 +8,7 @@ import {
   InputGroup,
 } from "react-bootstrap";
 import React, { useState } from "react";
+import { MenuConstants } from "../Constant/MenuConstants";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,9 +27,7 @@ const City = () => {
     const [showSideMenu, setShowSideMenu] = useState(false);
 
     // Step 2: handleSideMenu function to toggle the side menu
-    const handleSideMenu = () => {
-      setShowSideMenu(!showSideMenu);
-    };
+   
    const handleSetting = () => {
      navigate("/setting"); // Navigate to the settings route
    };
@@ -38,30 +37,16 @@ const City = () => {
         <Header />
       </Row>
       <Row className="mb-4">
-        <Col
-        xl={2} md={2} xxl={2} sm={3} 
-          className="app-sidemenu-col d-none d-md-block sidemenubg sidemenuborder"
-        >
+        
           <SideMenu />
-        </Col>
-        <Col xxl={9} xl={9} lg={9} md={9} className="p-0">
+        
+        <Col xxl={9} xl={9} lg={9} md={9} xs={7} className="p-0">
           <Col className="mt-1 paddingleft-mastersettings fontcolorblackbold borderbottom app-LandingPage-setting">
-            <span onClick={handleSideMenu} className="d-md-none">
-              <FontAwesomeIcon icon={faBars} />
+            <span className="cursorpointer" onClick={handleSetting}>
+              {MenuConstants.master}
             </span>{" "}
-            <span className="cursorpointer" onClick={handleSetting}>Masters</span> {">"} City
-            {showSideMenu && (
-              <Col
-                xl={2}
-                lg={2}
-                md={3}
-                sm={4}
-                xs={8}
-                className="app-sidemenu-col ms-3 d-block d-md-none sidemenubg sidemenuborder"
-              >
-                <SideMenu />
-              </Col>
-            )}
+            {">"} {MenuConstants.city}
+           
           </Col>
           <Row className="ms-4 mt-2">
             <Col
@@ -71,11 +56,11 @@ const City = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
             >
-              Manage City
+              {MenuConstants.manage} {MenuConstants.city}
             </Col>
             <Row className="app-country-box ms-0">
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">country</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.country}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -104,7 +89,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">Region</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.region}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -133,7 +118,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">State</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.state}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -162,7 +147,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">City</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.city}</Row>
                 <Col className="ms-4 mb-3">
                   <input
                     type="text"
@@ -173,12 +158,12 @@ const City = () => {
               <Row className="ms-2 mb-4">
                 <Col xxl={2} xl={2} lg={2} md={2}>
                   <Button className="cursorpointer bordercolororange mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Create
+                    {MenuConstants.create}
                   </Button>
                 </Col>
                 <Col>
                   <Button className="bordercolororange cursorpointer mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Cancel
+                    {MenuConstants.cancel}
                   </Button>
                 </Col>
               </Row>
@@ -192,11 +177,11 @@ const City = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
             >
-              List
+              {MenuConstants.list}
             </Col>
             <Row className="app-country-box ms-0 p-0 position-relative">
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">country</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.country}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -225,7 +210,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">Region</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.region}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -254,7 +239,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">State</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.state}</Row>
                 <Col className="ms-4 mb-3">
                   <InputGroup>
                     <FormControl
@@ -283,7 +268,7 @@ const City = () => {
                 </Col>
               </Col>
               <Col xxl={2} xl={2} lg={2} md={2}>
-                <Row className="ms-4 mt-3">City</Row>
+                <Row className="ms-4 mt-3">{MenuConstants.city}</Row>
                 <Col className="ms-4 mb-3">
                   <input
                     type="text"
@@ -300,23 +285,23 @@ const City = () => {
                 xs={3}
                 className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite ms-5 mt-5 app-LandingPage-locations"
               >
-                Search
+                {MenuConstants.search}
               </Col>
 
               <Row className="backgroundcolor fontcolorwhite ms-0 mt-2 mb-1">
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  Country
+                  {MenuConstants.country}
                 </Col>
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  Region
+                  {MenuConstants.region}
                 </Col>
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  State
+                  {MenuConstants.state}
                 </Col>
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  City
+                  {MenuConstants.city}
                 </Col>
-                <Col>Action</Col>
+                <Col>{MenuConstants.action}</Col>
               </Row>
               <Row className="ms-0 app-placeholder">
                 <Col xxl={2} xl={2} lg={2} md={2}>
@@ -376,8 +361,9 @@ const City = () => {
               </Row>
               <Row className="mt-5 d-flex align-items-center justify-content-center text-center mb-3">
                 <Col xs="auto">
-                  First Page
-                   <span className="cursorpointer"
+                  First {MenuConstants.page}
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -386,8 +372,8 @@ const City = () => {
                   >
                     <FontAwesomeIcon icon={faArrowLeft} />
                   </span>{" "}
-                  Page
-                <span 
+                  {MenuConstants.page}
+                  <span
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -397,7 +383,8 @@ const City = () => {
                     1
                   </span>{" "}
                   out of xx
-                <span className="cursorpointer"
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -406,7 +393,7 @@ const City = () => {
                   >
                     <FontAwesomeIcon icon={faArrowRight} />
                   </span>{" "}
-                  Last Page
+                  Last {MenuConstants.page}
                 </Col>
               </Row>
             </Row>

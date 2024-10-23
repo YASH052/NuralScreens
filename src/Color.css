@@ -1,5 +1,5 @@
 .fontcolorwhite {
-    color: white;
+    color: white!important;
 }
 .fontcolorblackbold {
     font-weight: 600;
@@ -12,4 +12,7 @@
 }
 .bordercolororange {
     border: 0.7px solid #ED713E!important;
+}
+.fontcolororange {
+color: #ED713E;
 }

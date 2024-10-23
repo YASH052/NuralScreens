@@ -9,6 +9,7 @@ import {
   faBars,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { MenuConstants } from "../Constant/MenuConstants";
 
 import SideMenu from "../SideMenu/SideMenu";
 import Header from "./Header";
@@ -20,9 +21,7 @@ const Country = () => {
       navigate("/setting"); // Navigate to the settings route
     };
   const [showSideMenu, setShowSideMenu] = useState(false);
-const handleSideMenu = () => {
-  setShowSideMenu(!showSideMenu);
-};
+
   // Step 2: handleSideMenu function to toggle the side menu
 
   return (
@@ -31,20 +30,16 @@ const handleSideMenu = () => {
         <Header />
       </Row>
       <Row className="mb-4">
-        <Col
-          xl={2} md={3} xxl={2} sm={3} lg={2}
-          className="app-sidemenu-col d-none d-md-block sidemenubg sidemenuborder"
-        >
-          <SideMenu />
-        </Col>
-        <Col xxl={9} xl={9} lg={9} md={9} sm={11} className="p-0">
+        <SideMenu />
+
+        <Col lg={9} md={9} sm={9} xl={9} xs={7} className="p-0">
           <Col className="mt-1 paddingleft-mastersettings p-0 fontcolorblackbold app-LandingPage-setting">
             {/* Show icon only on screens smaller than 992px */}
             <Col className="mt-1 paddingleft-mastersettings fontcolorblackbold borderbottom app-LandingPage-setting">
-              <span onClick={handleSideMenu} className="d-md-none">
-                <FontAwesomeIcon icon={faBars} />
+              <span className="cursorpointer" onClick={handleSetting}>
+                {MenuConstants.master}
               </span>{" "}
-              <span className="cursorpointer" onClick={handleSetting}>Masters</span> {">"} Country
+              {">"} {MenuConstants.country}
             </Col>
           </Col>
           {showSideMenu && (
@@ -67,11 +62,11 @@ const handleSideMenu = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite app-LandingPage-locations"
             >
-              Manage Country
+              {MenuConstants.manage} {MenuConstants.country}
             </Col>
             <Row className="app-country-box ms-0">
               <Row className="paddingleft-mastersettings mt-3 ms-4">
-                country
+                {MenuConstants.country}
               </Row>
               <Col xxl={2} xl={2} lg={2} md={2} className="ms-4 mb-3">
                 <input
@@ -82,12 +77,12 @@ const handleSideMenu = () => {
               <Row className="ms-2 mb-4">
                 <Col xxl={2} xl={2} lg={2} md={2}>
                   <Button className="cursorpointer bordercolororange mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Create
+                    {MenuConstants.create}
                   </Button>
                 </Col>
                 <Col>
                   <Button className="bordercolororange cursorpointer mediumfont mt-2 backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations">
-                    Cancel
+                    {MenuConstants.cancel}
                   </Button>
                 </Col>
               </Row>
@@ -101,10 +96,10 @@ const handleSideMenu = () => {
               md={2}
               className="cursorpointer bordercolororange mediumfont backgroundcolorsecondary fontcolorwhite  me-4 app-LandingPage-locations"
             >
-              List
+              {MenuConstants.list}
             </Col>
             <Row className="app-country-box ms-0 p-0">
-              <Row className="mt-3 ms-4">country</Row>
+              <Row className="mt-3 ms-4">{MenuConstants.country}</Row>
               <Col xxl={2} xl={2} lg={2} md={2} className="">
                 <input
                   type="text"
@@ -117,10 +112,10 @@ const handleSideMenu = () => {
                 lg={2}
                 md={2}
                 sm={3}
-                xs={3}
+                xs={6}
                 className="cursorpointer bordercolororange ms-4 mediumfont backgroundcolorsecondary fontcolorwhite  app-LandingPage-locations"
               >
-                Search
+                {MenuConstants.search}
               </Col>
 
               <Row className="backgroundcolor fontcolorwhite ms-0 mt-4 mb-2">
@@ -128,9 +123,9 @@ const handleSideMenu = () => {
                   S.No
                 </Col>
                 <Col xxl={2} xl={2} lg={2} md={2}>
-                  Country
+                  {MenuConstants.country}
                 </Col>
-                <Col>Action</Col>
+                <Col>{MenuConstants.action}</Col>
               </Row>
 
               <Row className="ms-0 app-placeholder">
@@ -179,8 +174,9 @@ const handleSideMenu = () => {
               </Row>
               <Row className="mt-5 d-flex align-items-center justify-content-center text-center mb-3">
                 <Col xs="auto" className="">
-                  First Page
-                   <span className="cursorpointer"
+                  First {MenuConstants.page}
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -189,8 +185,8 @@ const handleSideMenu = () => {
                   >
                     <FontAwesomeIcon icon={faArrowLeft} />
                   </span>{" "}
-                  Page
-                <span 
+                  {MenuConstants.page}
+                  <span
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -200,7 +196,8 @@ const handleSideMenu = () => {
                     1
                   </span>{" "}
                   out of xx
-                <span className="cursorpointer"
+                  <span
+                    className="cursorpointer"
                     style={{
                       border: "1px solid black",
                       padding: "10px",
@@ -209,7 +206,7 @@ const handleSideMenu = () => {
                   >
                     <FontAwesomeIcon icon={faArrowRight} />
                   </span>{" "}
-                  Last Page
+                  Last {MenuConstants.page}
                 </Col>
               </Row>
             </Row>
